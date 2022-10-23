@@ -659,7 +659,12 @@ PointCloudRGB::Ptr Cloud::loadPointCloudFromFile(
   return cloud;
 }
 
-void Cloud::setSamples(const Eigen::Matrix3Xd &samples) { samples_ = samples; }
+void Cloud::setSamples(Eigen::Matrix3Xd in_samples) { 
+  printf("IN: rows %d, cols %d", in_samples.rows(), in_samples.cols());
+  printf("CURR: rows %d, cols %d", samples_.rows(), samples_.cols());
+  samples_.resize(in_samples.rows(), in_samples.cols());
+  samples_ = in_samples;
+}
 
 }  // namespace util
 }  // namespace gpd

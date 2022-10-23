@@ -343,7 +343,7 @@ class Cloud {
    * \brief Set the samples.
    * \return the samples (size: 3 x n)
    */
-  void setSamples(const Eigen::Matrix3Xd &samples);
+  void setSamples(Eigen::Matrix3Xd samples);
 
   /**
    * \brief Set the surface normals.
